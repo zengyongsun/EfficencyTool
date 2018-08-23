@@ -2,7 +2,6 @@ ext {
     android = [
             compileSdkVersion: 27,
             buildToolsVersion: '27.0.3',
-            applicationId    : "com.example.administrator.functiondemo",
             minSdkVersion    : 15,
             targetSdkVersion : 26,
             versionCode      : 1,
@@ -13,16 +12,19 @@ ext {
             "support-v4"                   : 'com.android.support:support-v4:27.1.1',
             "appcompat-v7"                 : 'com.android.support:appcompat-v7:27.1.1',
             "recyclerview-v7"              : 'com.android.support:recyclerview-v7:27.1.1',
-
-            "BaseRecyclerViewAdapterHelper": 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.41',
-
-            "design"                       : 'com.android.support:design:27.1.1',
-            "multidex"                     : 'com.android.support:multidex:1.0.3',
-            "constraint-layout"            : 'com.android.support.constraint:constraint-layout:1.1.0',
             "support-annotations"          : 'com.android.support:support-annotations:27.1.1',
+            "design"                       : 'com.android.support:design:27.1.1',
+            "constraint-layout"            : 'com.android.support.constraint:constraint-layout:1.1.2',
+            "multidex"                     : 'com.android.support:multidex:1.0.3',
 
             "room:runtime"                 : 'android.arch.persistence.room:runtime:1.1.0',
             "room:compiler"                : "android.arch.persistence.room:compiler:1.1.0",
+
+            "junit"                        : 'junit:junit:4.12',
+            "test:runner"                  : 'com.android.support.test:runner:1.0.2',
+            "test.espresso"                : 'com.android.support.test.espresso:espresso-core:3.0.2',
+
+            "BaseRecyclerViewAdapterHelper": 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.41',
 
             "gson"                         : 'com.google.code.gson:gson:2.8.4',
             "okhttp3"                      : 'com.squareup.okhttp3:okhttp:3.10.0',
@@ -34,8 +36,10 @@ ext {
             "rxjava2"                      : 'io.reactivex.rxjava2:rxjava:2.1.13',
 
             "eventbus"                     : 'org.greenrobot:eventbus:3.1.1',
+
             "butterknife"                  : 'com.jakewharton:butterknife:8.8.1',
             "butterknife-compiler"         : 'com.jakewharton:butterknife-compiler:8.8.1',
+
             "glide"                        : 'com.github.bumptech.glide:glide:4.7.1',
             "glide:compiler"               : 'com.github.bumptech.glide:compiler:4.7.1',
             "glide-transformations"        : 'jp.wasabeef:glide-transformations:3.3.0',
@@ -44,14 +48,11 @@ ext {
 
             "logger"                       : 'com.orhanobut:logger:2.2.0',
 
-            "junit"                        : 'junit:junit:4.12',
-            "test:runner"                  : 'com.android.support.test:runner:1.0.2',
-            "test.espresso"                : 'com.android.support.test.espresso:espresso-core:3.0.2',
-
             "debug-db"                     : 'com.amitshekhar.android:debug-db:1.0.3',
 
             "easypermissions"              : 'pub.devrel:easypermissions:1.2.0',
 
             "mosby3:mvp"                   : 'com.hannesdorfmann.mosby3:mvp:3.1.0' // Plain MVP
     ]
+
 }
