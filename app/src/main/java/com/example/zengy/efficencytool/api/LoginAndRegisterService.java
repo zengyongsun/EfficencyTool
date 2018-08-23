@@ -1,5 +1,11 @@
 package com.example.zengy.efficencytool.api;
 
+import com.example.zengy.efficencytool.bean.BaseBean;
+
+import io.reactivex.Observable;
+import retrofit2.http.Field;
+import retrofit2.http.POST;
+
 /**
  * @author : Zeyo
  * e-mail : zengyongsun@163.com
@@ -9,5 +15,13 @@ package com.example.zengy.efficencytool.api;
  */
 public interface LoginAndRegisterService {
 
+    @POST("user/login")
+    Observable<BaseBean> login(@Field("username") String username,
+                               @Field("password") String password);
+
+    @POST("user/register")
+    Observable<BaseBean> register(@Field("username") String username,
+                                  @Field("password") String password,
+                                  @Field("repassword") String repassword);
 
 }

@@ -31,6 +31,15 @@ dependencies {
 
     implementation rootProject.ext.dependencies["appcompat-v7"]
     implementation rootProject.ext.dependencies["constraint-layout"]
+    implementation rootProject.ext.dependencies["design"]
+    implementation rootProject.ext.dependencies["recyclerview-v7"]
+
+    api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
+
+    implementation rootProject.ext.dependencies["butterknife"]
+    implementation rootProject.ext.dependencies["butterknife-compiler"]
+
+
     implementation rootProject.ext.dependencies["mosby3:mvp"]
 
     implementation project(':common')
