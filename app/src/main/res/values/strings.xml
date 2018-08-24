@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">EfficencyTool</string>
+
+
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+
+    <string name="input_username">请输入帐号</string>
+    <string name="input_password">请输入密码</string>
+
 </resources>

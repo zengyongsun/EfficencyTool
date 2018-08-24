@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".core.LoginActivity">
+    tools:context=".core.RegisterActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -34,7 +34,6 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="@string/input_username"
-            android:imeOptions="actionNext"
             android:textSize="16sp" />
 
     </android.support.design.widget.TextInputLayout>
@@ -58,12 +57,32 @@
             android:inputType="textPassword"
             android:textSize="16sp" />
 
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/rePasswordLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLayout">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etRePassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/input_password"
+            android:inputType="textPassword"
+            android:textSize="16sp" />
 
     </android.support.design.widget.TextInputLayout>
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btRegister"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
@@ -71,19 +90,6 @@
         android:text="@string/register"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/btLogin"
-        app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
-
-    <android.support.v7.widget.AppCompatButton
-        android:id="@+id/btLogin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="60dp"
-        android:text="@string/login"
-        app:layout_constraintLeft_toRightOf="@+id/btRegister"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
-
+        app:layout_constraintTop_toBottomOf="@+id/rePasswordLayout" />
 
 </android.support.constraint.ConstraintLayout>

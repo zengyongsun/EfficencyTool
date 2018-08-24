@@ -2,6 +2,7 @@ package com.example.zengy.efficencytool.api;
 
 import com.example.common.http.ObjectLoader;
 import com.example.zengy.efficencytool.bean.BaseBean;
+import com.example.zengy.efficencytool.bean.LoginBean;
 import com.example.zengy.efficencytool.http.RetrofitServiceManager;
 
 import io.reactivex.Observable;
@@ -19,14 +20,14 @@ public class LoginAndRegisterLoader extends ObjectLoader {
     private LoginAndRegisterService mService;
 
     public LoginAndRegisterLoader() {
-        RetrofitServiceManager.getInstance().create(LoginAndRegisterService.class);
+       mService =  RetrofitServiceManager.getInstance().create(LoginAndRegisterService.class);
     }
 
-    public Observable<BaseBean> login(String username,String password){
-        return mService.login(username,password).map(new Function<BaseBean, BaseBean>() {
+    public Observable<LoginBean> login(String username, String password){
+        return mService.login(username,password).map(new Function<LoginBean, LoginBean>() {
             @Override
-            public BaseBean apply(BaseBean baseBean) throws Exception {
-                return baseBean;
+            public LoginBean apply(LoginBean loginBean) throws Exception {
+                return loginBean;
             }
         });
     }

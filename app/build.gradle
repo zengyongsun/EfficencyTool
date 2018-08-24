@@ -25,6 +25,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation rootProject.ext.dependencies["junit"]
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation rootProject.ext.dependencies["junit"]
     androidTestImplementation rootProject.ext.dependencies["test:runner"]
     androidTestImplementation rootProject.ext.dependencies["test.espresso"]
@@ -37,7 +38,7 @@ dependencies {
     api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
 
     implementation rootProject.ext.dependencies["butterknife"]
-    implementation rootProject.ext.dependencies["butterknife-compiler"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
 
 
     implementation rootProject.ext.dependencies["mosby3:mvp"]

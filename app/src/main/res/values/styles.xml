@@ -8,4 +8,19 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--toolbar的一些配置，主题-->
+    <style name="ToolBarTheme" parent="AppTheme">
+
+        <!--隐藏掉Action Bar-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--溢出文字颜色-->
+        <item name="actionMenuTextColor">@android:color/white</item>
+        <!-- 菜单图标颜色 会影响系统所有的辅助线-->
+        <!--<item name="colorControlNormal">@android:color/white</item>-->
+
+    </style>
+
+
+
 </resources>
