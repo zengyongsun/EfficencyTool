@@ -1,4 +1,4 @@
-package com.example.common.http;
+package com.example.common.http.old;
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;

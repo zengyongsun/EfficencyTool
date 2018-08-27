@@ -1,8 +1,9 @@
 package com.example.zengy.efficencytool;
 
-import android.app.Application;
 
 import com.example.common.CommonApplication;
+import com.example.common.http.ApiManager;
+import com.example.zengy.efficencytool.api.Api;
 
 
 /**
@@ -18,5 +19,9 @@ public class AppApplication extends CommonApplication {
     public void onCreate() {
         super.onCreate();
         initLogger();
+        init();
+    }
+    private void init(){
+        ApiManager.init(Api.base_url);
     }
 }

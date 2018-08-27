@@ -1,6 +1,6 @@
 package com.example.zengy.efficencytool.api;
 
-import com.example.common.http.ObjectLoader;
+import com.example.common.http.old.ObjectLoader;
 import com.example.zengy.efficencytool.bean.BaseBean;
 import com.example.zengy.efficencytool.bean.LoginBean;
 import com.example.zengy.efficencytool.http.RetrofitServiceManager;
@@ -24,7 +24,7 @@ public class LoginAndRegisterLoader extends ObjectLoader {
     }
 
     public Observable<LoginBean> login(String username, String password){
-        return mService.login(username,password).map(new Function<LoginBean, LoginBean>() {
+        return observe(mService.login(username,password)).map(new Function<LoginBean, LoginBean>() {
             @Override
             public LoginBean apply(LoginBean loginBean) throws Exception {
                 return loginBean;
@@ -33,7 +33,7 @@ public class LoginAndRegisterLoader extends ObjectLoader {
     }
 
     public Observable<BaseBean> register(String username,String password,String repassword){
-        return mService.register(username,password,repassword).map(new Function<BaseBean, BaseBean>() {
+        return observe(mService.register(username,password,repassword)).map(new Function<BaseBean, BaseBean>() {
             @Override
             public BaseBean apply(BaseBean baseBean) throws Exception {
                 return baseBean;

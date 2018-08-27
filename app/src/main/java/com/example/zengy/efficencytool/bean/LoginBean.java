@@ -8,6 +8,22 @@ package com.example.zengy.efficencytool.bean;
  * version: 1.0
  */
 public class LoginBean extends BaseBean<LoginBean> {
+    @Override
+    public String toString() {
+        return "LoginBean{" +
+                "collectIds='" + collectIds + '\'' +
+                ", email='" + email + '\'' +
+                ", icon='" + icon + '\'' +
+                ", id='" + id + '\'' +
+                ", password='" + password + '\'' +
+                ", token='" + token + '\'' +
+                ", type=" + type +
+                ", username='" + username + '\'' +
+                ", errorMsg='" + errorMsg + '\'' +
+                ", errorCode=" + errorCode +
+                '}';
+    }
+
     /**
      * "collectIds": [],
      * "email": "",

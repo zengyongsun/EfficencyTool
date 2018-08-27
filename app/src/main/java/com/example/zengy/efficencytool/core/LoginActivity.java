@@ -7,7 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
+import com.example.common.http.ApiCallback;
+import com.example.common.packaging.LoggerUtil;
 import com.example.zengy.efficencytool.R;
+import com.example.zengy.efficencytool.api.ApiLoader;
+import com.example.zengy.efficencytool.api.ApiService;
 import com.example.zengy.efficencytool.api.LoginAndRegisterLoader;
 import com.example.zengy.efficencytool.bean.LoginBean;
 
@@ -15,6 +19,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
 public class LoginActivity extends AppCompatActivity {
@@ -57,13 +63,44 @@ public class LoginActivity extends AppCompatActivity {
     public void onBtLoginClicked() {
         String userName = etUserName.getText().toString();
         String password = etPassword.getText().toString();
-        new LoginAndRegisterLoader().login(userName,password).subscribe(new Consumer<LoginBean>() {
+
+        ApiLoader.reqLogin(userName, password, new ApiCallback<LoginBean>() {
             @Override
-            public void accept(LoginBean loginBean) throws Exception {
-                if (loginBean.errorCode == 0){
-                    Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
-                }
+            public void onNext(LoginBean loginBean) {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onCompleted() {
+
             }
         });
+
+//        new LoginAndRegisterLoader().login(userName, password).subscribe(new Observer<LoginBean>() {
+//            @Override
+//            public void onSubscribe(Disposable d) {
+//                LoggerUtil.d(d);
+//            }
+//
+//            @Override
+//            public void onNext(LoginBean loginBean) {
+//                LoggerUtil.d(loginBean.toString());
+//            }
+//
+//            @Override
+//            public void onError(Throwable e) {
+//                LoggerUtil.d(e.getMessage());
+//            }
+//
+//            @Override
+//            public void onComplete() {
+//                LoggerUtil.d("onComplete");
+//            }
+//        });
     }
 }
