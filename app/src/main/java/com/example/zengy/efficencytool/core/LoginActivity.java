@@ -1,5 +1,6 @@
 package com.example.zengy.efficencytool.core;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
@@ -14,6 +15,7 @@ import com.example.zengy.efficencytool.api.ApiLoader;
 import com.example.zengy.efficencytool.api.ApiService;
 import com.example.zengy.efficencytool.api.LoginAndRegisterLoader;
 import com.example.zengy.efficencytool.bean.LoginBean;
+import com.example.zengy.efficencytool.core.main.MainActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,12 +35,14 @@ public class LoginActivity extends AppCompatActivity {
     TextInputEditText etPassword;
 
     public static final int START_REGISTER = 1000;
+    private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        mContext = this;
         initView();
     }
 
@@ -67,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
         ApiLoader.reqLogin(userName, password, new ApiCallback<LoginBean>() {
             @Override
             public void onNext(LoginBean loginBean) {
-
+                Intent intent = new Intent(mContext, MainActivity.class);
             }
 
             @Override

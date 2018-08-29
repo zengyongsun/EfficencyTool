@@ -14,13 +14,16 @@
         android:theme="@style/ToolBarTheme">
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".core.LoginActivity">
+
+        </activity>
+        <activity android:name=".core.RegisterActivity"></activity>
+        <activity android:name=".core.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".core.RegisterActivity"></activity>
     </application>
 
 </manifest>

@@ -8,4 +8,10 @@
     <string name="input_username">请输入帐号</string>
     <string name="input_password">请输入密码</string>
 
+
+    <string name="todo">待办</string>
+    <string name="inspiration">灵感</string>
+    <string name="collect">收集</string>
+    <string name="mine">我的</string>
+
 </resources>
